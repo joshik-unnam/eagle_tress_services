@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eagle Tree Service LLC | NW Arkansas Tree Experts</title>
+  <meta name="description" content="Professional tree removal, trimming, stump grinding &amp; cleanup in NW Arkansas. 12+ years experience. Free estimates. (479) 861-2859.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --g-dark:  #1a4d2e;
+      --g-mid:   #2d7a4f;
+      --g-light: #4a9e6b;
+      --g-pale:  #e8f5ee;
+      --white:   #ffffff;
+      --off:     #f8faf9;
+      --text:    #0d1f14;
+      --tmid:    #3a5040;
+      --tmute:   #6b8575;
+      --sh:      0 4px 24px rgba(26,77,46,.08);
+      --sh-lg:   0 16px 56px rgba(26,77,46,.14);
+      --r:       8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    #nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 200;
+      padding: 22px 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .3s, box-shadow .3s, padding .3s;
+    }
+    #nav.s {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(14px);
+      padding: 14px 64px;
+      box-shadow: 0 1px 24px rgba(26,77,46,.08);
+    }
+    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .logo-mark {
+      width: 42px; height: 42px; border-radius: 9px;
+      background: var(--g-dark);
+      border: 1.5px solid rgba(255,255,255,.18);
+      display: flex; align-items: center; justify-content: center;
+      transition: background .3s, border-color .3s;
+      flex-shrink: 0;
+    }
+    #nav.s .logo-mark { background: var(--g-dark); border-color: rgba(26,77,46,.3); }
+    .logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem; font-weight: 700; color: white; line-height: 1.2;
+      transition: color .3s;
+    }
+    #nav.s .logo-text { color: var(--g-dark); }
+    .logo-text small {
+      display: block; font-family: 'Outfit', sans-serif;
+      font-size: .6rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; opacity: .55;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: .84rem; font-weight: 500;
+      color: rgba(255,255,255,.82); transition: color .2s;
+    }
+    #nav.s .nav-links a { color: var(--tmid); }
+    .nav-links a:hover { color: white; }
+    #nav.s .nav-links a:hover { color: var(--g-mid); }
+    .nav-links .cta {
+      background: white; color: var(--g-dark) !important;
+      padding: 10px 22px; border-radius: var(--r); font-weight: 600 !important; transition: all .2s !important;
+    }
+    #nav.s .nav-links .cta { background: var(--g-dark); color: white !important; }
+    .nav-links .cta:hover { background: var(--g-pale) !important; transform: translateY(-1px); }
+    #nav.s .nav-links .cta:hover { background: var(--g-mid) !important; }
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .burger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; transition: background .3s; }
+    #nav.s .burger span { background: var(--g-dark); }
+
+    /* Mobile menu */
+    .mmenu {
+      display: none; position: fixed; inset: 0; z-index: 190;
+      background: white; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+    }
+    .mmenu.open { display: flex; }
+    .mmenu a { font-size: 1.35rem; font-family: 'Outfit', sans-serif; font-weight: 600; color: var(--g-dark); text-decoration: none; }
+    .mmenu a.msmall { font-size: .92rem; font-family: 'Outfit', sans-serif; font-weight: 400; color: var(--tmute); }
+    .mmenu a.mcta { color: var(--g-mid); }
+    .mclose { position: absolute; top: 24px; right: 28px; cursor: pointer; font-size: 1.5rem; color: var(--tmute); }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100dvh;
+      min-height: 640px;
+      display: flex; align-items: flex-end;
+      background: #060f09;
+      position: relative; overflow: hidden;
+    }
+    .hero-art {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0; pointer-events: none;
+    }
+    .hero-art svg { width: 100%; height: 100%; display: block; }
+    .hero-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(ellipse 90% 80% at 0% 100%, rgba(2,7,3,.97) 0%, rgba(2,7,3,.65) 36%, transparent 70%),
+        linear-gradient(to bottom, rgba(2,7,3,.80) 0%, transparent 20%, transparent 65%, rgba(2,7,3,.42) 100%);
+    }
+    .hero-inner {
+      display: flex; flex-direction: column;
+      padding: 0 64px 88px;
+      position: relative; z-index: 3;
+      max-width: 760px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+      color: rgba(255,255,255,.88); font-size: .7rem; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 8px 18px; border-radius: 100px; margin-bottom: 32px;
+    }
+    .badge::before { content: ''; width: 6px; height: 6px; background: #6fcf8a; border-radius: 50%; }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+      font-weight: 800; color: white; line-height: 1.08; letter-spacing: -.02em;
+      margin-bottom: 24px; max-width: 720px;
+    }
+    .hero h1 em { font-style: italic; color: #7de0a2; }
+    .hero-sub {
+      font-size: 1.05rem; line-height: 1.75; color: rgba(255,255,255,.6);
+      max-width: 500px; margin-bottom: 42px; font-weight: 300;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+    .btn-w {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: var(--g-dark);
+      padding: 15px 30px; border-radius: var(--r);
+      font-weight: 600; font-size: .92rem; text-decoration: none; transition: all .2s;
+    }
+    .btn-w:hover { background: var(--g-pale); transform: translateY(-2px); box-shadow: var(--sh); }
+    .btn-g {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: rgba(255,255,255,.88);
+      padding: 14px 26px; border-radius: var(--r);
+      font-weight: 500; font-size: .92rem; text-decoration: none;
+      border: 1px solid rgba(255,255,255,.25); transition: all .2s;
+    }
+    .btn-g:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.45); }
+    .hero-stats { display: flex; gap: 52px; padding-top: 44px; border-top: 1px solid rgba(255,255,255,.1); }
+    .s-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.6rem; font-weight: 800; color: white; line-height: 1;
+    }
+    .s-lbl { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.42); margin-top: 8px; }
+
+    /* ── SHARED ── */
+    .con { max-width: 1200px; margin: 0 auto; padding-left: 64px; padding-right: 64px; }
+    .sec { padding-top: 96px; padding-bottom: 96px; }
+    .lbl { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--g-mid); margin-bottom: 13px; }
+    .ttl { font-family: 'Outfit', sans-serif; font-size: clamp(1.85rem, 3.2vw, 2.8rem); font-weight: 800; line-height: 1.15; color: var(--text); margin-bottom: 16px; }
+    .dsc { font-size: .95rem; line-height: 1.75; color: var(--tmute); max-width: 500px; }
+
+    /* ── SERVICES ── */
+    .svc-wrap { background: var(--off); }
+    .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+    .ftab {
+      padding: 9px 20px; border-radius: 100px;
+      background: transparent; border: 1.5px solid #dde8e2;
+      font-family: 'Outfit', sans-serif; font-size: .81rem; font-weight: 500;
+      color: var(--tmid); cursor: pointer; transition: all .22s;
+    }
+    .ftab:hover { border-color: var(--g-mid); color: var(--g-mid); }
+    .ftab.on { background: var(--g-dark); border-color: var(--g-dark); color: white; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .scard {
+      background: white; border-radius: var(--r); padding: 36px 30px;
+      border: 1px solid rgba(26,77,46,.06);
+      position: relative; overflow: hidden;
+      transition: transform .3s, box-shadow .3s, opacity .3s;
+    }
+    .scard::after {
+      content: ''; position: absolute; inset: 0 0 auto 0; height: 3px;
+      background: linear-gradient(90deg, var(--g-dark), var(--g-light));
+      transform: scaleX(0); transform-origin: left; transition: transform .35s;
+    }
+    .scard:hover { transform: translateY(-5px); box-shadow: var(--sh-lg); }
+    .scard:hover::after { transform: scaleX(1); }
+    .scard.dim { opacity: .2; pointer-events: none; }
+    .si { width: 48px; height: 48px; background: var(--g-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .si svg { width: 22px; height: 22px; }
+    .scard h3 { font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 9px; }
+    .scard p { font-size: .87rem; line-height: 1.7; color: var(--tmute); }
+    .slink { display: inline-flex; align-items: center; gap: 5px; font-size: .79rem; font-weight: 600; color: var(--g-mid); text-decoration: none; margin-top: 16px; transition: gap .2s; }
+    .slink:hover { gap: 9px; }
+    .slink svg { width: 12px; height: 12px; }
+
+    /* ── TESTIMONIALS ── */
+    .test-wrap { background: var(--g-dark); }
+    .test-wrap .lbl { color: rgba(255,255,255,.38); }
+    .test-wrap .ttl { color: white; }
+    .t-head { text-align: center; margin-bottom: 52px; }
+    .t-wrap { overflow: hidden; position: relative; }
+    .t-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+    .t-slide { min-width: 100%; padding: 0 2px; }
+    .tcard {
+      max-width: 740px; margin: 0 auto;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px; padding: 48px 52px;
+      transition: border-color .3s;
+    }
+    .tcard:hover { border-color: rgba(255,255,255,.2); }
+    .tstars { display: flex; gap: 4px; margin-bottom: 24px; }
+    .tstars span { color: #fbbf24; font-size: 1rem; }
+    .tq {
+      font-family: 'Outfit', sans-serif; font-style: italic; font-weight: 500;
+      font-size: 1.08rem; line-height: 1.7;
+      color: rgba(255,255,255,.8); margin-bottom: 32px;
+    }
+    .tq::before { content: '\201C'; font-size: 3.5rem; color: var(--g-light); line-height: 0; vertical-align: -.55em; margin-right: 2px; }
+    .tauthor { display: flex; align-items: center; gap: 14px; }
+    .tav {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: var(--g-mid); display: flex; align-items: center; justify-content: center;
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; color: white;
+    }
+    .tname { font-size: .9rem; font-weight: 600; color: rgba(255,255,255,.85); }
+    .tcity { font-size: .75rem; color: rgba(255,255,255,.4); margin-top: 2px; }
+    .t-ctrl { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; }
+    .tbtn {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      color: white; cursor: pointer; font-size: .95rem;
+      display: flex; align-items: center; justify-content: center; transition: background .2s;
+    }
+    .tbtn:hover { background: rgba(255,255,255,.16); }
+    .tdots { display: flex; gap: 8px; }
+    .tdot {
+      width: 6px; height: 6px; border-radius: 3px;
+      background: rgba(255,255,255,.2); cursor: pointer; transition: all .35s;
+    }
+    .tdot.on { background: white; width: 22px; }
+
+    /* ── ABOUT ── */
+    .ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .ab-vis { position: relative; height: 480px; border-radius: 12px; overflow: hidden; }
+    .ab-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ab-pill {
+      position: absolute; bottom: 28px; left: 28px;
+      background: white; border-radius: var(--r); padding: 18px 24px; box-shadow: var(--sh-lg);
+    }
+    .ab-num { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--g-dark); line-height: 1; }
+    .ab-txt { font-size: .74rem; color: var(--tmute); margin-top: 4px; }
+    .ck-list { display: flex; flex-direction: column; gap: 13px; margin-top: 32px; }
+    .ck { display: flex; align-items: flex-start; gap: 12px; }
+    .ck-dot { width: 20px; height: 20px; flex-shrink: 0; background: var(--g-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .ck-dot svg { width: 10px; height: 10px; }
+    .ck p { font-size: .9rem; line-height: 1.6; color: var(--tmid); }
+
+    /* ── ESTIMATE ── */
+    .est-wrap { background: var(--g-pale); }
+    .est-inner { max-width: 640px; margin: 0 auto; }
+    .est-widget { background: white; border-radius: 12px; padding: 36px; box-shadow: var(--sh-lg); }
+    .est-step-lbl { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--tmute); margin-bottom: 14px; }
+    .est-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .echip {
+      padding: 10px 20px; border-radius: 100px;
+      background: var(--off); border: 1.5px solid #dde8e2;
+      font-family: 'Outfit', sans-serif; font-size: .83rem; font-weight: 500;
+      color: var(--tmid); cursor: pointer; transition: all .2s;
+    }
+    .echip:hover { border-color: var(--g-mid); color: var(--g-mid); }
+    .echip.sel { background: var(--g-pale); border-color: var(--g-mid); color: var(--g-dark); font-weight: 600; }
+    .est-s2 { opacity: 0; pointer-events: none; transform: translateY(8px); transition: all .3s; }
+    .est-s2.show { opacity: 1; pointer-events: all; transform: none; }
+    .est-res {
+      background: var(--g-dark); border-radius: var(--r); padding: 24px 26px;
+      opacity: 0; pointer-events: none; transform: translateY(8px); transition: all .3s;
+    }
+    .est-res.show { opacity: 1; pointer-events: all; transform: none; }
+    .er-lbl { font-size: .67rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 6px; }
+    .er-range { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: white; margin-bottom: 5px; }
+    .er-note { font-size: .75rem; color: rgba(255,255,255,.48); margin-bottom: 18px; }
+    .er-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: white; color: var(--g-dark);
+      padding: 11px 22px; border-radius: var(--r);
+      font-size: .83rem; font-weight: 600; text-decoration: none; transition: all .2s;
+    }
+    .er-cta:hover { background: var(--g-pale); }
+
+    /* ── AREAS ── */
+    .ar-wrap { background: var(--g-dark); }
+    .ar-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; }
+    .ar-wrap .lbl { color: rgba(255,255,255,.38); }
+    .ar-wrap .ttl { color: white; }
+    .ar-wrap .dsc { color: rgba(255,255,255,.48); }
+    .ar-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .ar-tag {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+      border-radius: 6px; padding: 13px 17px;
+      display: flex; align-items: center; gap: 10px; transition: background .2s; cursor: default;
+    }
+    .ar-tag:hover { background: rgba(255,255,255,.09); }
+    .ar-dot { width: 5px; height: 5px; background: var(--g-light); border-radius: 50%; flex-shrink: 0; }
+    .ar-tag span { font-size: .85rem; color: rgba(255,255,255,.78); }
+
+    /* ── FAQ ── */
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 52px; }
+    .faq {
+      border: 1.5px solid #dde8e2; border-radius: var(--r); overflow: hidden; transition: border-color .2s;
+    }
+    .faq.open { border-color: var(--g-mid); }
+    .faq-q {
+      width: 100%; padding: 19px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      background: white; border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-size: .91rem; font-weight: 600;
+      color: var(--text); text-align: left; transition: background .2s;
+    }
+    .faq-q:hover { background: var(--off); }
+    .faq.open .faq-q { background: var(--g-pale); color: var(--g-dark); }
+    .faq-ic {
+      width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%;
+      background: var(--off); display: flex; align-items: center; justify-content: center;
+      transition: transform .3s, background .2s; font-size: .85rem; color: var(--tmute);
+    }
+    .faq.open .faq-ic { transform: rotate(45deg); background: var(--g-mid); color: white; }
+    .faq-a {
+      max-height: 0; overflow: hidden; padding: 0 22px;
+      background: white; transition: max-height .35s ease, padding .35s;
+    }
+    .faq.open .faq-a { max-height: 220px; padding: 0 22px 20px; }
+    .faq-a p { font-size: .87rem; line-height: 1.72; color: var(--tmute); }
+
+    /* ── CONTACT ── */
+    .ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .ct-items { display: flex; flex-direction: column; gap: 10px; margin-top: 34px; }
+    .cti {
+      display: flex; align-items: center; gap: 15px;
+      padding: 17px 20px; background: var(--off);
+      border-radius: var(--r); border: 1px solid transparent;
+      text-decoration: none; transition: all .2s;
+    }
+    .cti:hover { background: var(--g-pale); border-color: rgba(45,122,79,.15); }
+    .cti-ic {
+      width: 40px; height: 40px; flex-shrink: 0; background: white; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(26,77,46,.06);
+    }
+    .cti-ic svg { width: 17px; height: 17px; }
+    .cti-l { font-size: .67rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--tmute); margin-bottom: 3px; }
+    .cti-v { font-size: .88rem; font-weight: 500; color: var(--text); }
+    .cf { display: flex; flex-direction: column; gap: 12px; }
+    .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .fg { display: flex; flex-direction: column; gap: 5px; }
+    .fg label { font-size: .72rem; font-weight: 600; letter-spacing: .04em; color: var(--tmid); }
+    .fg input, .fg select, .fg textarea {
+      padding: 11px 14px; border: 1.5px solid #dde8e2; border-radius: 6px;
+      font-family: 'Outfit', sans-serif; font-size: .87rem; color: var(--text);
+      background: white; outline: none; transition: border-color .2s; -webkit-appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--g-mid); }
+    .fg textarea { resize: vertical; min-height: 100px; }
+    .cf-btn {
+      background: var(--g-dark); color: white; border: none;
+      padding: 15px 28px; border-radius: var(--r);
+      font-family: 'Outfit', sans-serif; font-size: .9rem; font-weight: 600; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; transition: all .2s;
+    }
+    .cf-btn:hover { background: var(--g-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,77,46,.22); }
+
+    /* ── FOOTER ── */
+    footer { background: #0a1c10; }
+    .foot-main { padding: 68px 64px 44px; }
+    .foot-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 54px; }
+    .fbn { font-family: 'Outfit', sans-serif; font-size: 1.05rem; font-weight: 700; color: white; margin-bottom: 12px; }
+    .fbn small { display: block; font-family: 'Outfit', sans-serif; font-size: .6rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; opacity: .38; }
+    .fbl { font-size: .84rem; line-height: 1.75; color: rgba(255,255,255,.34); max-width: 278px; margin-bottom: 22px; }
+    .fsoc { display: flex; gap: 10px; }
+    .fsl { width: 34px; height: 34px; background: rgba(255,255,255,.06); border-radius: 6px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background .2s; }
+    .fsl:hover { background: rgba(255,255,255,.12); }
+    .fsl svg { width: 14px; height: 14px; }
+    .fc h4 { font-size: .68rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.33); margin-bottom: 16px; }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .fc ul a { font-size: .84rem; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .fc ul a:hover { color: white; }
+    .foot-bar { max-width: 1200px; margin: 0 auto; padding: 22px 64px; border-top: 1px solid rgba(255,255,255,.05); display: flex; justify-content: space-between; align-items: center; }
+    .foot-bar p { font-size: .76rem; color: rgba(255,255,255,.24); }
+
+    /* ── IMAGE-CENTRIC SERVICE CARDS (Double-Bezel) ── */
+    .scard-outer {
+      position: relative;
+      border-radius: 20px;
+      background: rgba(26,77,46,.03);
+      border: 1px solid rgba(26,77,46,.09);
+      padding: 5px;
+      overflow: hidden;
+      transition: border-color .5s cubic-bezier(0.32,.72,0,1),
+                  box-shadow .5s cubic-bezier(0.32,.72,0,1);
+    }
+    .scard-outer.dim { opacity: .15; pointer-events: none; transition: opacity .3s; }
+    .scard-outer:hover {
+      border-color: rgba(45,122,79,.3);
+      box-shadow: 0 0 0 5px rgba(74,158,107,.06), var(--sh-lg);
+    }
+    .scard-inner {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 440px;
+      position: relative;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.07);
+    }
+    .scard-inner img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .8s cubic-bezier(0.32,.72,0,1), filter .6s;
+      filter: saturate(.78) brightness(.68);
+      will-change: transform;
+    }
+    .scard-outer:hover .scard-inner img {
+      transform: scale(1.06);
+      filter: saturate(.92) brightness(.72);
+    }
+    .scard-grd {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(
+        to top,
+        rgba(6,16,10,.98) 0%,
+        rgba(9,24,15,.78) 26%,
+        rgba(11,32,18,.3) 56%,
+        transparent 78%
+      );
+    }
+    .scard-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 28px 26px 26px; z-index: 2;
+    }
+    .scard-eyebrow {
+      font-size: .6rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: #6fcf8a; display: block; margin-bottom: 9px;
+    }
+    .scard-h {
+      font-family: 'Outfit', sans-serif; font-size: 1.32rem; font-weight: 800;
+      color: white; line-height: 1.18;
+      transition: margin-bottom .42s cubic-bezier(0.32,.72,0,1);
+      margin-bottom: 0;
+    }
+    .scard-outer:hover .scard-h { margin-bottom: 12px; }
+    .scard-desc {
+      font-size: .82rem; line-height: 1.65; color: rgba(255,255,255,.6);
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height .52s cubic-bezier(0.32,.72,0,1),
+                  opacity .4s cubic-bezier(0.32,.72,0,1);
+    }
+    .scard-outer:hover .scard-desc { max-height: 80px; opacity: 1; }
+    .scard-cta {
+      display: inline-flex; align-items: center; gap: 0;
+      background: white; color: var(--g-dark);
+      padding: 9px 14px 9px 18px; border-radius: 100px;
+      font-weight: 700; font-size: .79rem; text-decoration: none;
+      margin-top: 17px;
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .42s cubic-bezier(0.32,.72,0,1),
+                  transform .42s cubic-bezier(0.32,.72,0,1),
+                  background .2s;
+    }
+    .scard-outer:hover .scard-cta { opacity: 1; transform: translateY(0); }
+    .scard-cta:hover { background: var(--g-pale) !important; }
+    .scard-arrow {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--g-pale); margin-left: 10px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform .32s cubic-bezier(0.32,.72,0,1), background .25s;
+    }
+    .scard-cta:hover .scard-arrow { transform: translate(2px,-2px); background: var(--g-mid); }
+    .scard-arrow svg { width: 11px; height: 11px; stroke: var(--g-dark); transition: stroke .25s; }
+    .scard-cta:hover .scard-arrow svg { stroke: white; }
+
+    /* ── PROOF BAR ── */
+    .proof-bar {
+      background: white;
+      border-bottom: 1px solid rgba(26,77,46,.07);
+      padding: 0;
+    }
+    .proof-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 64px;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .proof-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 20px 0; border-right: 1px solid rgba(26,77,46,.07);
+      padding-left: 32px;
+    }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border-right: none; }
+    .proof-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--g-pale); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proof-icon svg { width: 16px; height: 16px; }
+    .proof-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.12rem; font-weight: 700; color: var(--g-dark); line-height: 1.1;
+    }
+    .proof-lbl { font-size: .72rem; color: var(--tmute); margin-top: 1px; }
+    @media (max-width: 760px) {
+      .proof-inner { grid-template-columns: 1fr 1fr; padding: 0 24px; }
+      .proof-item { padding-left: 16px; }
+      .proof-item:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 420px) {
+      .proof-inner { grid-template-columns: 1fr; }
+      .proof-item { border-right: none; border-bottom: 1px solid rgba(26,77,46,.07); padding: 14px 0; }
+      .proof-item:last-child { border-bottom: none; }
+    }
+
+    /* ── PROCESS WIDGET ── */
+    .proc-wrap { background: var(--off); }
+    .proc-widget {
+      display: grid; grid-template-columns: 2fr 3fr;
+      gap: 0; margin-top: 52px;
+      border-radius: 22px; overflow: hidden;
+      border: 1px solid rgba(26,77,46,.1);
+      box-shadow: 0 24px 72px rgba(26,77,46,.12);
+      min-height: 500px;
+    }
+    /* Left panel */
+    .proc-left { display: flex; flex-direction: column; padding: 10px; background: white; }
+    .proc-item {
+      padding: 20px 18px 18px; border-radius: 12px; cursor: pointer;
+      position: relative; overflow: hidden; flex: 1;
+      transition: background .35s cubic-bezier(0.32,.72,0,1);
+    }
+    .proc-item + .proc-item { margin-top: 2px; }
+    .proc-item:hover { background: rgba(26,77,46,.025); }
+    .proc-item.active { background: var(--off); }
+    .proc-num-tag {
+      font-size: .58rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--tmute); display: block; margin-bottom: 6px;
+      transition: color .3s;
+    }
+    .proc-item.active .proc-num-tag { color: var(--g-mid); }
+    .proc-item-h {
+      font-family: 'Outfit', sans-serif; font-size: .97rem; font-weight: 700;
+      color: var(--text); margin-bottom: 0;
+      transition: color .3s;
+    }
+    .proc-item.active .proc-item-h { color: var(--g-dark); }
+    .proc-item-desc {
+      font-size: .81rem; line-height: 1.65; color: var(--tmute);
+      max-height: 0; overflow: hidden; opacity: 0; margin-top: 0;
+      transition: max-height .45s cubic-bezier(0.32,.72,0,1),
+                  opacity .38s cubic-bezier(0.32,.72,0,1),
+                  margin-top .38s cubic-bezier(0.32,.72,0,1);
+    }
+    .proc-item.active .proc-item-desc { max-height: 80px; opacity: 1; margin-top: 9px; }
+    .proc-bar {
+      height: 2px; background: rgba(26,77,46,.09); border-radius: 2px;
+      margin-top: 13px; overflow: hidden; opacity: 0; transition: opacity .3s;
+    }
+    .proc-item.active .proc-bar { opacity: 1; }
+    .proc-bar-fill { height: 100%; width: 0; background: var(--g-mid); border-radius: 2px; }
+    /* Right panel: image */
+    .proc-right { position: relative; overflow: hidden; background: var(--g-dark); }
+    .proc-imgs { position: absolute; inset: 0; }
+    .proc-imgs img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      opacity: 0; transform: scale(1.045);
+      transition: opacity .72s cubic-bezier(0.32,.72,0,1),
+                  transform .72s cubic-bezier(0.32,.72,0,1);
+      filter: saturate(.82) brightness(.68);
+      will-change: transform, opacity;
+    }
+    .proc-imgs img.active { opacity: 1; transform: scale(1); filter: saturate(.9) brightness(.72); }
+    .proc-right-ov {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(to top,
+        rgba(6,16,10,.92) 0%,
+        rgba(6,16,10,.22) 42%,
+        transparent 68%
+      );
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 28px 30px;
+    }
+    .proc-step-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 11px;
+      font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.72); width: fit-content;
+    }
+    .proc-step-pill-dot { width: 5px; height: 5px; background: #6fcf8a; border-radius: 50%; }
+    .proc-right-title {
+      font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 800;
+      color: white; line-height: 1.18; margin-bottom: 20px;
+      transition: opacity .4s, transform .4s cubic-bezier(0.32,.72,0,1);
+    }
+    .proc-dots { display: flex; gap: 6px; }
+    .proc-dot {
+      width: 6px; height: 6px; border-radius: 3px;
+      background: rgba(255,255,255,.28); cursor: pointer;
+      transition: all .35s cubic-bezier(0.32,.72,0,1);
+    }
+    .proc-dot.active { width: 22px; background: white; }
+
+    /* ── WORK GALLERY ── */
+    .gallery-wrap { background: var(--text); overflow: hidden; }
+    .gallery-wrap .lbl { color: rgba(255,255,255,.38); }
+    .gallery-wrap .ttl { color: white; }
+    .gal-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 20px; }
+    .gal-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.5);
+      text-decoration: none; transition: color .2s;
+    }
+    .gal-link:hover { color: #6fcf8a; }
+    .gal-link svg { width: 12px; height: 12px; }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 5px;
+    }
+    .gal-item {
+      position: relative; overflow: hidden; cursor: pointer;
+      background: var(--g-dark);
+    }
+    .gal-item:first-child { grid-row: span 2; }
+    .gal-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94), filter .5s;
+      filter: saturate(.75) brightness(.85);
+    }
+    .gal-item:hover img { transform: scale(1.07); filter: saturate(1.05) brightness(.95); }
+    .gal-over {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,28,16,.9) 0%, rgba(10,28,16,.15) 45%, transparent 70%);
+      opacity: 0; transition: opacity .35s;
+      display: flex; align-items: flex-end; padding: 20px 22px;
+    }
+    .gal-item:hover .gal-over { opacity: 1; }
+    .gal-tag {
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(255,255,255,.9);
+      padding: 6px 12px; border: 1px solid rgba(255,255,255,.25); border-radius: 100px;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(140deg, #091a0f 0%, #1a4d2e 50%, #265a38 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(74,158,107,.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .cta-inner {
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 60px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .cta-headline {
+      font-size: clamp(1.9rem, 3vw, 2.8rem); font-weight: 800;
+      font-family: 'Outfit', sans-serif; color: white; line-height: 1.12; margin-bottom: 14px;
+    }
+    .cta-headline em { font-style: italic; color: #7de0a2; }
+    .cta-sub { font-size: .94rem; color: rgba(255,255,255,.52); line-height: 1.7; max-width: 420px; }
+    .cta-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .cta-primary {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: white; color: var(--g-dark);
+      padding: 15px 30px; border-radius: var(--r);
+      font-weight: 700; font-size: .92rem; text-decoration: none; transition: all .2s;
+    }
+    .cta-primary:hover { background: var(--g-pale); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,.3); }
+    .cta-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.07); color: rgba(255,255,255,.82);
+      padding: 14px 26px; border-radius: var(--r); border: 1px solid rgba(255,255,255,.18);
+      font-weight: 500; font-size: .92rem; text-decoration: none; transition: all .2s;
+    }
+    .cta-ghost:hover { background: rgba(255,255,255,.14); }
+    .cta-photo {
+      border-radius: 12px; overflow: hidden; height: 300px;
+      position: relative; flex-shrink: 0;
+    }
+    .cta-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.8) saturate(1.1); }
+    .cta-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(9,26,15,.6) 100%);
+    }
+
+    /* ── BEFORE/AFTER SLIDER ── */
+    .baf-wrap { position: relative; height: 480px; border-radius: 12px; overflow: hidden; cursor: col-resize; user-select: none; touch-action: pan-y; }
+    .baf-layer { position: absolute; inset: 0; }
+    .baf-layer img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .baf-after-layer { width: 50%; overflow: hidden; }
+    .baf-after-layer img { width: 200%; max-width: none; }
+    .baf-handle {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      transform: translateX(-50%); width: 48px; z-index: 3;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
+      cursor: col-resize;
+    }
+    .baf-line { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: white; transform: translateX(-50%); box-shadow: 0 0 12px rgba(0,0,0,.4); }
+    .baf-btn {
+      position: relative; z-index: 1;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: white; box-shadow: 0 4px 20px rgba(0,0,0,.28);
+      display: flex; align-items: center; justify-content: center; gap: 3px;
+      transition: transform .2s cubic-bezier(0.32,.72,0,1);
+    }
+    .baf-btn:hover { transform: scale(1.1); }
+    .baf-btn svg { width: 18px; height: 18px; stroke: var(--g-dark); }
+    .baf-lbl {
+      position: absolute; bottom: 18px; z-index: 4;
+      font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      background: rgba(0,0,0,.48); color: white; padding: 5px 12px; border-radius: 100px;
+      backdrop-filter: blur(6px);
+    }
+    .baf-lbl-before { left: 18px; }
+    .baf-lbl-after { right: 18px; }
+
+    /* ── HEALTH CHECK WIDGET ── */
+    .hc-widget {
+      background: white; border-radius: 14px; padding: 32px 32px 28px;
+      border: 1px solid rgba(26,77,46,.08); box-shadow: var(--sh);
+    }
+    .hc-title { font-family: 'Outfit', sans-serif; font-size: 1.08rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .hc-sub { font-size: .81rem; color: var(--tmute); margin-bottom: 22px; line-height: 1.55; }
+    .hc-questions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .hc-q {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 13px 16px; border-radius: 10px;
+      border: 1.5px solid #dde8e2; background: var(--off);
+      cursor: pointer; transition: all .25s cubic-bezier(0.32,.72,0,1);
+      font-size: .85rem; font-weight: 500; color: var(--tmid);
+    }
+    .hc-q:hover { border-color: var(--g-mid); background: var(--g-pale); }
+    .hc-q.yes { border-color: #e53e3e; background: #fff5f5; color: #c53030; }
+    .hc-q.yes .hc-toggle { background: #e53e3e; border-color: #e53e3e; }
+    .hc-q.yes .hc-toggle::after { opacity: 1; }
+    .hc-toggle {
+      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+      border: 2px solid #dde8e2; background: white;
+      position: relative; transition: all .2s;
+    }
+    .hc-toggle::after {
+      content: '✓'; position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; color: white; opacity: 0; transition: opacity .2s;
+    }
+    .hc-result {
+      border-radius: 10px; padding: 16px 18px;
+      display: flex; align-items: center; gap: 14px;
+      opacity: 0; transform: translateY(6px);
+      transition: all .38s cubic-bezier(0.32,.72,0,1);
+      pointer-events: none;
+    }
+    .hc-result.show { opacity: 1; transform: none; pointer-events: all; }
+    .hc-result.green { background: #f0faf4; border: 1.5px solid #68d391; }
+    .hc-result.yellow { background: #fffbeb; border: 1.5px solid #f6c90e; }
+    .hc-result.red { background: #fff5f5; border: 1.5px solid #fc8181; }
+    .hc-res-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .hc-res-text { font-size: .82rem; line-height: 1.55; color: var(--text); flex: 1; }
+    .hc-res-text strong { display: block; font-size: .88rem; font-weight: 700; margin-bottom: 2px; }
+    .hc-res-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 100px; flex-shrink: 0;
+      font-size: .78rem; font-weight: 700; text-decoration: none;
+      transition: all .2s;
+    }
+    .hc-result.green .hc-res-cta { background: var(--g-pale); color: var(--g-dark); }
+    .hc-result.yellow .hc-res-cta { background: #fef9c3; color: #92400e; }
+    .hc-result.red .hc-res-cta { background: #fed7d7; color: #c53030; }
+    .hc-res-cta:hover { transform: translateY(-1px); }
+    .hc-reset { margin-top: 12px; font-size: .75rem; color: var(--tmute); background: none; border: none; cursor: pointer; text-decoration: underline; padding: 0; }
+    .hc-reset:hover { color: var(--g-mid); }
+
+    /* ── AREAS + FAQ (merged) ── */
+    .af-wrap { background: var(--g-dark); }
+    .af-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .af-wrap .lbl { color: rgba(255,255,255,.38); }
+    .af-wrap .ttl { color: white; }
+    .af-wrap .dsc { color: rgba(255,255,255,.46); }
+    /* city bento */
+    .city-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; margin-top: 28px; }
+    .city-card {
+      position: relative; border-radius: 10px; overflow: hidden;
+      height: 76px; cursor: default;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      transition: border-color .3s cubic-bezier(0.32,.72,0,1), transform .3s;
+    }
+    .city-card:hover { border-color: rgba(111,207,138,.35); transform: translateY(-2px); }
+    .city-card img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      opacity: 0; transition: opacity .4s cubic-bezier(0.32,.72,0,1), transform .4s;
+      filter: saturate(.7) brightness(.55);
+      transform: scale(1.06);
+    }
+    .city-card:hover img { opacity: 1; transform: scale(1); }
+    .city-card-body {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; align-items: center; gap: 10px; padding: 0 16px;
+    }
+    .city-card-dot { width: 5px; height: 5px; background: #6fcf8a; border-radius: 50%; flex-shrink: 0; transition: box-shadow .3s; }
+    .city-card:hover .city-card-dot { box-shadow: 0 0 0 3px rgba(111,207,138,.3); }
+    .city-card-name { font-size: .88rem; font-weight: 600; color: rgba(255,255,255,.82); transition: color .3s; }
+    .city-card:hover .city-card-name { color: white; }
+    .city-card-dist { font-size: .68rem; color: rgba(255,255,255,.36); margin-left: auto; transition: color .3s; }
+    .city-card:hover .city-card-dist { color: rgba(255,255,255,.55); }
+    /* faq on dark */
+    .faq-dark { display: flex; flex-direction: column; gap: 6px; margin-top: 28px; }
+    .faqd {
+      border: 1px solid rgba(255,255,255,.09); border-radius: 10px; overflow: hidden;
+      transition: border-color .25s;
+    }
+    .faqd.open { border-color: rgba(111,207,138,.3); }
+    .faqd-q {
+      width: 100%; padding: 16px 18px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      background: transparent; border: none; cursor: pointer;
+      font-family: 'Outfit', sans-serif; font-size: .88rem; font-weight: 600;
+      color: rgba(255,255,255,.78); text-align: left;
+      transition: color .2s, background .2s;
+    }
+    .faqd-q:hover { color: white; background: rgba(255,255,255,.03); }
+    .faqd.open .faqd-q { color: white; }
+    .faqd-ic {
+      width: 20px; height: 20px; flex-shrink: 0; border-radius: 50%;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; color: rgba(255,255,255,.5);
+      transition: transform .3s cubic-bezier(0.32,.72,0,1), background .25s, color .25s;
+    }
+    .faqd.open .faqd-ic { transform: rotate(45deg); background: #6fcf8a; color: #0d2618; border-color: #6fcf8a; }
+    .faqd-a {
+      max-height: 0; overflow: hidden; padding: 0 18px;
+      transition: max-height .38s cubic-bezier(0.32,.72,0,1), padding .38s;
+    }
+    .faqd.open .faqd-a { max-height: 200px; padding: 0 18px 16px; }
+    .faqd-a p { font-size: .84rem; line-height: 1.72; color: rgba(255,255,255,.46); }
+
+    /* ── CONTACT (dark, full-bleed) ── */
+    .ct-dark {
+      position: relative; overflow: hidden;
+      background: var(--text);
+    }
+    .ct-dark-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://picsum.photos/seed/tree-service-outdoor-morning/1400/900');
+      background-size: cover; background-position: center;
+      filter: saturate(.6) brightness(.22);
+    }
+    .ct-dark-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(6,16,10,.97) 0%, rgba(6,16,10,.88) 50%, rgba(6,16,10,.6) 100%);
+    }
+    .ct-dark-inner { position: relative; z-index: 1; }
+    .ct-dark .lbl { color: rgba(255,255,255,.38); }
+    .ct-dark .ttl { color: white; }
+    .ct-dark .dsc { color: rgba(255,255,255,.46); }
+    .ct-dark .ct-items { margin-top: 28px; }
+    .ct-dark .cti { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.07); }
+    .ct-dark .cti:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.15); }
+    .ct-dark .cti-l { color: rgba(255,255,255,.38); }
+    .ct-dark .cti-v { color: rgba(255,255,255,.82); }
+    .ct-dark .cti-ic { background: rgba(255,255,255,.08); }
+    .ct-dark-form .fg label { color: rgba(255,255,255,.5); }
+    .ct-dark-form .fg input,
+    .ct-dark-form .fg select,
+    .ct-dark-form .fg textarea {
+      background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1);
+      color: white;
+    }
+    .ct-dark-form .fg input::placeholder,
+    .ct-dark-form .fg textarea::placeholder { color: rgba(255,255,255,.28); }
+    .ct-dark-form .fg input:focus,
+    .ct-dark-form .fg select:focus,
+    .ct-dark-form .fg textarea:focus { border-color: #6fcf8a; }
+    .ct-dark-form select option { background: #0d2618; color: white; }
+
+    /* ── FLOAT BTN ── */
+    .flt {
+      position: fixed; bottom: 28px; right: 28px; z-index: 300;
+      background: var(--g-dark); color: white;
+      display: flex; align-items: center; gap: 9px;
+      padding: 13px 22px; border-radius: 100px;
+      text-decoration: none; font-weight: 600; font-size: .86rem;
+      box-shadow: 0 8px 32px rgba(26,77,46,.38);
+      transform: translateY(80px) scale(.9); opacity: 0;
+      transition: all .38s cubic-bezier(.34,1.56,.64,1);
+    }
+    .flt.vis { transform: none; opacity: 1; }
+    .flt:hover { background: var(--g-mid); transform: translateY(-3px); box-shadow: 0 14px 40px rgba(26,77,46,.42); }
+    .flt svg { width: 15px; height: 15px; }
+    .fpulse { width: 7px; height: 7px; background: #6fcf8a; border-radius: 50%; animation: pulse 2.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.55;transform:scale(.78)} }
+
+    /* ── REVEAL ── */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity .58s ease, transform .58s ease; }
+    .rv.vis { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      #nav, #nav.s { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .hero-inner { padding: 0 24px 72px; }
+      .hero h1 { font-size: clamp(2.4rem, 8vw, 3.4rem); }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .con { padding-left: 24px; padding-right: 24px; }
+      .sec { padding-top: 68px; padding-bottom: 68px; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .tcard { padding: 36px 28px; }
+      .ab-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ab-vis { height: 300px; }
+      .est-inner { max-width: 100%; }
+      #estimate .con > div[style] { grid-template-columns: 1fr !important; }
+      .af-grid { grid-template-columns: 1fr; gap: 52px; }
+      .baf-wrap { height: 320px; }
+      .ar-inner { grid-template-columns: 1fr; gap: 40px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .ct-grid { grid-template-columns: 1fr; gap: 48px; }
+      .fr { grid-template-columns: 1fr; }
+      .foot-grid { grid-template-columns: 1fr; gap: 36px; }
+      .foot-main { padding: 48px 24px 36px; }
+      .foot-bar { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .flt { bottom: 20px; right: 20px; padding: 12px 18px; font-size: .82rem; }
+      .scard-inner { height: 360px; }
+      .proc-widget { grid-template-columns: 1fr; }
+      .proc-right { min-height: 320px; order: -1; }
+      .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+      .gal-item:first-child { grid-row: span 1; }
+      .cta-inner { grid-template-columns: 1fr; }
+      .cta-photo { height: 220px; width: 100%; }
+    }
+    @media (max-width: 540px) {
+      .city-grid { grid-template-columns: 1fr; }
+      .baf-wrap { height: 260px; }
+      .ar-grid { grid-template-columns: 1fr; }
+      .scard-inner { height: 300px; }
+      .scard-outer .scard-desc { max-height: 90px; opacity: 1; }
+      .scard-outer .scard-h { margin-bottom: 12px; }
+      .scard-outer .scard-cta { opacity: 1; transform: translateY(0); }
+      .proc-right { min-height: 260px; }
+      .gal-grid { grid-template-columns: 1fr; grid-template-rows: repeat(5, 200px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="prices.html">Pricing</a></li>
+    <li><a href="#areas">Areas</a></li>
+    <li><a href="#contact" class="cta">Free Estimate</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mmenu" id="mmenu">
+  <span class="mclose" onclick="toggleMenu()">&#x2715;</span>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="prices.html" onclick="toggleMenu()">Pricing</a>
+  <a href="#areas" onclick="toggleMenu()">Areas</a>
+  <a href="#contact" class="mcta" onclick="toggleMenu()">Free Estimate</a>
+  <a href="tel:+14798612859" class="msmall" onclick="toggleMenu()">(479) 861-2859</a>
+</div>
+
+<!-- HERO -->
+<div id="home" class="hero">
+
+  <div class="hero-art">
+    <img src="img.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+  </div>
+
+  <!-- Gradient overlay for text legibility -->
+  <div class="hero-overlay"></div>
+
+  <div class="hero-inner">
+    <h1>Where <em>Precision</em><br>Meets the Tree Line</h1>
+    <p class="hero-sub">Tree removal, trimming, stump grinding, and cleanup for homes and businesses across NW Arkansas. Done right.</p>
+    <div class="hero-actions">
+      <a href="tel:+14798612859" class="btn-w">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.27 9.44a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call (479) 861-2859
+      </a>
+      <a href="#services" class="btn-g">
+        Our Services
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="s-num" data-target="12" data-suffix="+">0</div><div class="s-lbl">Years Experience</div></div>
+      <div><div class="s-num" data-target="10" data-suffix="+">0</div><div class="s-lbl">Cities Served</div></div>
+      <div><div class="s-num" data-target="100" data-suffix="%">0</div><div class="s-lbl">Satisfaction</div></div>
+    </div>
+    <div id="navSentinel" style="position:absolute;bottom:80px;left:0;width:1px;height:1px;pointer-events:none;"></div>
+    <div id="fltSentinel" style="position:absolute;bottom:-30vh;left:0;width:1px;height:1px;pointer-events:none;"></div>
+  </div>
+</div>
+
+
+<!-- SERVICES -->
+<div class="svc-wrap" id="services">
+  <div class="con sec">
+    <div style="margin-bottom:44px; max-width:600px;">
+      <span class="lbl">What We Do</span>
+      <h2 class="ttl">Complete Tree Care,<br>Start to Finish</h2>
+      <p class="dsc" style="margin-top:12px;">From hazardous takedowns to detailed trimming, we handle every aspect of tree care with professional-grade equipment.</p>
+    </div>
+    <div class="filter-row">
+      <button class="ftab on" data-f="all">All Services</button>
+      <button class="ftab" data-f="removal">Removal</button>
+      <button class="ftab" data-f="maintenance">Maintenance</button>
+      <button class="ftab" data-f="emergency">Emergency</button>
+    </div>
+    <div class="svc-grid">
+
+      <!-- IMAGE CARD: Tree Removal -->
+      <div class="scard-outer rv" data-cat="removal">
+        <div class="scard-inner">
+          <img src="https://picsum.photos/seed/chainsaw-professional-tree-felling/700/920"
+               alt="Professional tree removal" loading="lazy">
+          <div class="scard-grd"></div>
+          <div class="scard-content">
+            <span class="scard-eyebrow">Removal</span>
+            <div class="scard-h">Tree Removal</div>
+            <div class="scard-desc">Safe, efficient removal of any size tree — hazardous, dead, or unwanted. Our crew handles complex takedowns with precision equipment.</div>
+            <a href="prices.html" class="scard-cta">
+              See pricing
+              <span class="scard-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE CARD: Trimming & Pruning -->
+      <div class="scard-outer rv" data-cat="maintenance">
+        <div class="scard-inner">
+          <img src="https://picsum.photos/seed/arborist-climbing-tree-pruning-work/700/920"
+               alt="Tree trimming and pruning" loading="lazy">
+          <div class="scard-grd"></div>
+          <div class="scard-content">
+            <span class="scard-eyebrow">Maintenance</span>
+            <div class="scard-h">Trimming &amp; Pruning</div>
+            <div class="scard-desc">Expert shaping and seasonal pruning to improve health, structure, and curb appeal — making your trees look their best year-round.</div>
+            <a href="prices.html" class="scard-cta">
+              See pricing
+              <span class="scard-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE CARD: Stump Grinding -->
+      <div class="scard-outer rv" data-cat="removal">
+        <div class="scard-inner">
+          <img src="https://picsum.photos/seed/stump-grinding-machine-outdoor-landscape/700/920"
+               alt="Stump grinding service" loading="lazy">
+          <div class="scard-grd"></div>
+          <div class="scard-content">
+            <span class="scard-eyebrow">Removal</span>
+            <div class="scard-h">Stump Grinding</div>
+            <div class="scard-desc">Complete stump grinding that eliminates unsightly remnants and prevents regrowth, leaving your yard fully usable and clean.</div>
+            <a href="prices.html" class="scard-cta">
+              See pricing
+              <span class="scard-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE CARD: Lot & Land Clearing -->
+      <div class="scard-outer rv" data-cat="removal">
+        <div class="scard-inner">
+          <img src="https://picsum.photos/seed/land-clearing-trees-construction-site/700/920"
+               alt="Lot and land clearing" loading="lazy">
+          <div class="scard-grd"></div>
+          <div class="scard-content">
+            <span class="scard-eyebrow">Removal</span>
+            <div class="scard-h">Lot &amp; Land Clearing</div>
+            <div class="scard-desc">Full lot clearing for new construction, development projects, or reclaiming overgrown land — handled efficiently and safely.</div>
+            <a href="prices.html" class="scard-cta">
+              See pricing
+              <span class="scard-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE CARD: Debris Cleanup -->
+      <div class="scard-outer rv" data-cat="maintenance">
+        <div class="scard-inner">
+          <img src="https://picsum.photos/seed/yard-debris-cleanup-branches-leaves/700/920"
+               alt="Debris cleanup service" loading="lazy">
+          <div class="scard-grd"></div>
+          <div class="scard-content">
+            <span class="scard-eyebrow">Maintenance</span>
+            <div class="scard-h">Debris Cleanup</div>
+            <div class="scard-desc">Thorough post-job cleanup, branch removal, and haul-away so your property looks spotless after every single visit.</div>
+            <a href="#contact" class="scard-cta">
+              Get a quote
+              <span class="scard-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE CARD: Emergency Response -->
+      <div class="scard-outer rv" data-cat="emergency">
+        <div class="scard-inner">
+          <img src="https://picsum.photos/seed/storm-damage-fallen-tree-emergency-response/700/920"
+               alt="Emergency tree response" loading="lazy">
+          <div class="scard-grd"></div>
+          <div class="scard-content">
+            <span class="scard-eyebrow">Emergency</span>
+            <div class="scard-h">Emergency Response</div>
+            <div class="scard-desc">When storms strike and trees fall, we respond fast. Our crew handles urgent, dangerous situations safely and quickly.</div>
+            <a href="tel:+14798612859" class="scard-cta">
+              Call now
+              <span class="scard-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="proc-wrap" id="process">
+  <div class="con sec">
+    <div style="max-width:540px; margin-bottom:52px;">
+      <span class="lbl">How It Works</span>
+      <h2 class="ttl">From First Call to<br>Final Cleanup</h2>
+      <p class="dsc" style="margin-top:12px;">Four simple steps — that's all it takes to get professional tree care on your schedule.</p>
+    </div>
+    <div class="proc-widget rv">
+      <!-- Left: interactive step list -->
+      <div class="proc-left" id="procLeft">
+        <div class="proc-item active" data-pidx="0">
+          <span class="proc-num-tag">Step 01</span>
+          <div class="proc-item-h">Call or Contact Us</div>
+          <div class="proc-item-desc">Reach us by phone at (479) 861-2859 or submit a request online. We respond the same day — often within the hour.</div>
+          <div class="proc-bar"><div class="proc-bar-fill"></div></div>
+        </div>
+        <div class="proc-item" data-pidx="1">
+          <span class="proc-num-tag">Step 02</span>
+          <div class="proc-item-h">Free On-Site Estimate</div>
+          <div class="proc-item-desc">We visit your property, assess the job, and give you an honest, no-obligation written quote before work begins.</div>
+          <div class="proc-bar"><div class="proc-bar-fill"></div></div>
+        </div>
+        <div class="proc-item" data-pidx="2">
+          <span class="proc-num-tag">Step 03</span>
+          <div class="proc-item-h">Professional Service</div>
+          <div class="proc-item-desc">Our fully equipped crew works efficiently and safely — respecting your property throughout the entire job.</div>
+          <div class="proc-bar"><div class="proc-bar-fill"></div></div>
+        </div>
+        <div class="proc-item" data-pidx="3">
+          <span class="proc-num-tag">Step 04</span>
+          <div class="proc-item-h">Spotless Cleanup</div>
+          <div class="proc-item-desc">Every branch, chip, and piece of debris is hauled away. We leave your yard better than we found it.</div>
+          <div class="proc-bar"><div class="proc-bar-fill"></div></div>
+        </div>
+      </div>
+      <!-- Right: image panel -->
+      <div class="proc-right">
+        <div class="proc-imgs" id="procImgs">
+          <img src="https://picsum.photos/seed/customer-phone-call-tree-service/900/700" alt="Call us" loading="lazy" class="active">
+          <img src="https://picsum.photos/seed/outdoor-property-inspection-estimate/900/700" alt="Free estimate" loading="lazy">
+          <img src="https://picsum.photos/seed/professional-tree-crew-equipment/900/700" alt="Professional service" loading="lazy">
+          <img src="https://picsum.photos/seed/clean-yard-after-tree-removal-spotless/900/700" alt="Clean yard" loading="lazy">
+        </div>
+        <div class="proc-right-ov">
+          <div class="proc-step-pill">
+            <span class="proc-step-pill-dot"></span>
+            <span id="procPillText">Step 01 of 04</span>
+          </div>
+          <div class="proc-right-title" id="procRightTitle">Call or Contact Us</div>
+          <div class="proc-dots" id="procDots">
+            <div class="proc-dot active" data-didx="0"></div>
+            <div class="proc-dot" data-didx="1"></div>
+            <div class="proc-dot" data-didx="2"></div>
+            <div class="proc-dot" data-didx="3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="test-wrap" id="testimonials">
+  <div class="con sec">
+    <div class="t-head">
+      <h2 class="ttl">Trusted Across NW Arkansas</h2>
+    </div>
+    <div class="t-wrap">
+      <div class="t-track" id="tTrack">
+
+        <div class="t-slide">
+          <div class="tcard">
+            <div class="tstars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="tq">We had a massive oak threatening our roof after a bad storm. Eagle Tree was out the next morning, had it down safely, and cleaned everything up perfectly. Couldn't believe how fast and professional the crew was.</p>
+            <div class="tauthor">
+              <div class="tav" style="padding:0;overflow:hidden;"><img src="https://picsum.photos/seed/portrait-man-midwest-44/80/80" alt="Michael T." style="width:44px;height:44px;object-fit:cover;display:block;"></div>
+              <div><div class="tname">Michael T.</div><div class="tcity">Bentonville, AR</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-slide">
+          <div class="tcard">
+            <div class="tstars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="tq">Best tree service in NW Arkansas, no question. They trimmed four large trees on our property and the difference is incredible. Showed up on time, knew exactly what they were doing, and left nothing behind.</p>
+            <div class="tauthor">
+              <div class="tav" style="padding:0;overflow:hidden;"><img src="https://picsum.photos/seed/portrait-woman-friendly-82/80/80" alt="Sarah K." style="width:44px;height:44px;object-fit:cover;display:block;"></div>
+              <div><div class="tname">Sarah K.</div><div class="tcity">Rogers, AR</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-slide">
+          <div class="tcard">
+            <div class="tstars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="tq">Called about stump grinding and they gave me the best quote in the area. The work was done in under an hour, yard looks great. Will absolutely be calling again for the stumps out back.</p>
+            <div class="tauthor">
+              <div class="tav" style="padding:0;overflow:hidden;"><img src="https://picsum.photos/seed/portrait-man-older-35/80/80" alt="James R." style="width:44px;height:44px;object-fit:cover;display:block;"></div>
+              <div><div class="tname">James R.</div><div class="tcity">Fayetteville, AR</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="t-slide">
+          <div class="tcard">
+            <div class="tstars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p class="tq">Had them remove two dead trees from our backyard. The guys were professional, respectful of the property, and left everything spotless when they finished. Great value and great people.</p>
+            <div class="tauthor">
+              <div class="tav" style="padding:0;overflow:hidden;"><img src="https://picsum.photos/seed/portrait-woman-mature-61/80/80" alt="Linda M." style="width:44px;height:44px;object-fit:cover;display:block;"></div>
+              <div><div class="tname">Linda M.</div><div class="tcity">Springdale, AR</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="t-ctrl">
+      <button class="tbtn" id="tPrev">&#8592;</button>
+      <div class="tdots" id="tDots"></div>
+      <button class="tbtn" id="tNext">&#8594;</button>
+    </div>
+  </div>
+</div>
+
+<!-- WORK GALLERY -->
+<div class="gallery-wrap" id="gallery">
+  <div class="con sec">
+    <div class="gal-head">
+      <div>
+        <span class="lbl">Our Work</span>
+        <h2 class="ttl">Jobs Done Right,<br>Every Time</h2>
+      </div>
+      <a href="#contact" class="gal-link">
+        Get Your Free Estimate
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item rv">
+        <img src="https://picsum.photos/seed/big-tree-removal-arkansas/800/600" alt="Large tree removal" loading="lazy">
+        <div class="gal-over"><span class="gal-tag">Tree Removal</span></div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://picsum.photos/seed/tree-trimming-service-nwa/600/300" alt="Tree trimming" loading="lazy">
+        <div class="gal-over"><span class="gal-tag">Trimming &amp; Pruning</span></div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://picsum.photos/seed/stump-grinding-yard-clean/600/300" alt="Stump grinding" loading="lazy">
+        <div class="gal-over"><span class="gal-tag">Stump Grinding</span></div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://picsum.photos/seed/lot-land-clearing-outdoor/600/300" alt="Lot clearing" loading="lazy">
+        <div class="gal-over"><span class="gal-tag">Lot Clearing</span></div>
+      </div>
+      <div class="gal-item rv">
+        <img src="https://picsum.photos/seed/emergency-storm-tree-service/600/300" alt="Emergency service" loading="lazy">
+        <div class="gal-over"><span class="gal-tag">Emergency Response</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="con sec">
+    <div class="ab-grid">
+      <div class="rv">
+        <div class="baf-wrap" id="bafWrap">
+          <div class="baf-layer">
+            <img src="https://picsum.photos/seed/overgrown-tree-before-removal-yard/640/500" alt="Before tree removal" loading="lazy">
+          </div>
+          <div class="baf-layer baf-after-layer" id="bafAfter">
+            <img src="https://picsum.photos/seed/clean-yard-after-tree-removal-bright/640/500" alt="After tree removal" loading="lazy">
+          </div>
+          <div class="baf-lbl baf-lbl-before">Before</div>
+          <div class="baf-lbl baf-lbl-after">After</div>
+          <div class="baf-handle" id="bafHandle">
+            <div class="baf-line"></div>
+            <div class="baf-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="ab-pill" style="position:relative;margin-top:16px;">
+          <div class="ab-num">12+</div>
+          <div class="ab-txt">Years of Experience</div>
+        </div>
+      </div>
+      <div>
+        <h2 class="ttl">NW Arkansas's Most Dedicated Tree Crew</h2>
+        <p class="dsc" style="margin-bottom:0">Eagle Tree Service LLC brings over 12 years of hands-on expertise to every project. From single-tree removals to large commercial jobs, we show up on time, work hard, and leave your property cleaner than we found it.</p>
+        <div class="ck-list">
+          <div class="ck rv"><div class="ck-dot"><svg viewBox="0 0 10 10" fill="none" stroke="#2d7a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5l2.5 3 4.5-5"/></svg></div><p>Experienced crew with 12+ years in professional tree service</p></div>
+          <div class="ck rv"><div class="ck-dot"><svg viewBox="0 0 10 10" fill="none" stroke="#2d7a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5l2.5 3 4.5-5"/></svg></div><p>Serving residential and commercial clients across all of NW Arkansas</p></div>
+          <div class="ck rv"><div class="ck-dot"><svg viewBox="0 0 10 10" fill="none" stroke="#2d7a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5l2.5 3 4.5-5"/></svg></div><p>Professional-grade equipment for safe, efficient work every time</p></div>
+          <div class="ck rv"><div class="ck-dot"><svg viewBox="0 0 10 10" fill="none" stroke="#2d7a4f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 5l2.5 3 4.5-5"/></svg></div><p>Full cleanup included — we don't leave until the job is done right</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK ESTIMATE + HEALTH CHECK -->
+<div class="est-wrap" id="estimate">
+  <div class="con sec">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;">
+      <div>
+        <span class="lbl">Instant Estimate</span>
+        <h2 class="ttl" style="margin-bottom:10px;">Get a Ballpark<br>in 30 Seconds</h2>
+        <p class="dsc" style="margin-bottom:28px;">Select your service and size to see a range. Free to confirm in person.</p>
+      <div class="est-widget">
+        <div class="est-step-lbl">1. What service do you need?</div>
+        <div class="est-chips" id="estS1">
+          <button class="echip" data-step="1" data-val="removal">Tree Removal</button>
+          <button class="echip" data-step="1" data-val="trimming">Trimming</button>
+          <button class="echip" data-step="1" data-val="stump">Stump Grinding</button>
+          <button class="echip" data-step="1" data-val="clearing">Lot Clearing</button>
+        </div>
+        <div class="est-s2" id="estS2">
+          <div class="est-step-lbl">2. How large is the job?</div>
+          <div class="est-chips" id="estS2chips">
+            <button class="echip" data-step="2" data-val="small">Small</button>
+            <button class="echip" data-step="2" data-val="medium">Medium</button>
+            <button class="echip" data-step="2" data-val="large">Large</button>
+          </div>
+        </div>
+        <div class="est-res" id="estRes">
+          <div class="er-lbl">Estimated Range</div>
+          <div class="er-range" id="erRange">—</div>
+          <div class="er-note" id="erNote">Estimate only · Exact pricing requires on-site assessment</div>
+          <a href="#contact" class="er-cta">
+            Free Estimate
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Health Check Widget -->
+    <div>
+      <span class="lbl">Tree Health Check</span>
+      <h2 class="ttl" style="margin-bottom:10px;">Is Your Tree<br>an Emergency?</h2>
+      <p class="dsc" style="margin-bottom:28px;">Answer 3 quick questions to find out how urgently your tree needs attention.</p>
+      <div class="hc-widget">
+        <div class="hc-questions">
+          <div class="hc-q" data-hq="0" onclick="hcToggle(0)">
+            <span>Is the tree visibly leaning or unstable?</span>
+            <div class="hc-toggle"></div>
+          </div>
+          <div class="hc-q" data-hq="1" onclick="hcToggle(1)">
+            <span>Are there large dead or hanging branches?</span>
+            <div class="hc-toggle"></div>
+          </div>
+          <div class="hc-q" data-hq="2" onclick="hcToggle(2)">
+            <span>Was there recent storm or wind damage?</span>
+            <div class="hc-toggle"></div>
+          </div>
+        </div>
+        <div class="hc-result green" id="hcResult">
+          <span class="hc-res-icon">🌿</span>
+          <div class="hc-res-text">
+            <strong id="hcTitle">Looks Routine</strong>
+            <span id="hcDesc">No urgent signs — schedule a regular trim or maintenance visit.</span>
+          </div>
+          <a href="#contact" class="hc-res-cta" id="hcCta">Schedule →</a>
+        </div>
+        <button class="hc-reset" id="hcReset" onclick="hcReset()" style="display:none;">↺ Reset</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- AREAS + FAQ (merged) -->
+<div class="af-wrap" id="areas">
+  <div class="con sec">
+    <div class="af-grid">
+      <!-- Left: City coverage -->
+      <div>
+        <span class="lbl">Service Coverage</span>
+        <h2 class="ttl">Covering All of<br>NW Arkansas</h2>
+        <p class="dsc">Based in Gentry, AR — our crew travels the entire region. Hover a city to see it.</p>
+        <div class="city-grid">
+          <div class="city-card rv"><img src="https://picsum.photos/seed/bentonville-arkansas-city/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Bentonville</span><span class="city-card-dist">~12 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/fayetteville-arkansas-scenic/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Fayetteville</span><span class="city-card-dist">~28 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/rogers-arkansas-suburb/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Rogers</span><span class="city-card-dist">~15 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/springdale-arkansas-outdoor/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Springdale</span><span class="city-card-dist">~22 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/bella-vista-arkansas-nature/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Bella Vista</span><span class="city-card-dist">~8 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/siloam-springs-arkansas/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Siloam Springs</span><span class="city-card-dist">~18 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/gravette-arkansas-town/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Gravette</span><span class="city-card-dist">~6 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/tontitown-arkansas-rural/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Tontitown</span><span class="city-card-dist">~20 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/huntsville-arkansas-mountains/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Huntsville</span><span class="city-card-dist">~42 mi</span></div></div>
+          <div class="city-card rv"><img src="https://picsum.photos/seed/fort-smith-arkansas-river/400/160" alt="" loading="lazy"><div class="city-card-body"><div class="city-card-dot"></div><span class="city-card-name">Fort Smith</span><span class="city-card-dist">~90 mi</span></div></div>
+        </div>
+      </div>
+      <!-- Right: FAQ -->
+      <div id="faq">
+        <span class="lbl">FAQ</span>
+        <h2 class="ttl">Common<br>Questions</h2>
+        <p class="dsc" style="margin-bottom:0;">Everything you need to know before your first call.</p>
+        <div class="faq-dark">
+          <div class="faqd rv">
+            <button class="faqd-q" onclick="toggleFaqD(this)">Do you offer free estimates?<span class="faqd-ic">+</span></button>
+            <div class="faqd-a"><p>Yes — always free, always no-obligation. We'll come out to your property, assess the job, and give you an honest price before any work begins.</p></div>
+          </div>
+          <div class="faqd rv">
+            <button class="faqd-q" onclick="toggleFaqD(this)">How long does tree removal take?<span class="faqd-ic">+</span></button>
+            <div class="faqd-a"><p>Most residential tree removals take 2–6 hours depending on size and complexity. Larger jobs may take a full day. We give you a time estimate upfront.</p></div>
+          </div>
+          <div class="faqd rv">
+            <button class="faqd-q" onclick="toggleFaqD(this)">Do you haul away debris?<span class="faqd-ic">+</span></button>
+            <div class="faqd-a"><p>Yes. Full cleanup and debris haul-away is included in every job. We leave your property looking better than when we arrived.</p></div>
+          </div>
+          <div class="faqd rv">
+            <button class="faqd-q" onclick="toggleFaqD(this)">Are you insured?<span class="faqd-ic">+</span></button>
+            <div class="faqd-a"><p>Yes, Eagle Tree Service LLC is fully insured. You can have complete peace of mind knowing your property is protected while we work.</p></div>
+          </div>
+          <div class="faqd rv">
+            <button class="faqd-q" onclick="toggleFaqD(this)">How soon can you schedule?<span class="faqd-ic">+</span></button>
+            <div class="faqd-a"><p>Standard jobs are scheduled within 1–3 business days. For emergencies we respond as quickly as possible — often the same day.</p></div>
+          </div>
+          <div class="faqd rv">
+            <button class="faqd-q" onclick="toggleFaqD(this)">Do you serve my area?<span class="faqd-ic">+</span></button>
+            <div class="faqd-a"><p>We serve 10+ cities across NW Arkansas including Bentonville, Fayetteville, Rogers, Springdale, Bella Vista, and more. Call (479) 861-2859 if unsure.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="ct-dark">
+  <div class="ct-dark-bg"></div>
+  <div class="ct-dark-overlay"></div>
+  <div class="con sec ct-dark-inner">
+    <div class="ct-grid">
+      <div>
+        <span class="lbl">Get In Touch</span>
+        <h2 class="ttl">Ready to Start<br>Your Project?</h2>
+        <p class="dsc">Call for a free estimate or fill out the form — we'll follow up the same day. No job too big or too small.</p>
+        <div class="ct-items">
+          <a href="tel:+14798612859" class="cti rv">
+            <div class="cti-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#6fcf8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.27 9.44a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="cti-l">Phone</div><div class="cti-v">(479) 861-2859</div></div>
+          </a>
+          <a href="mailto:eagletreeservice3@gmail.com" class="cti rv">
+            <div class="cti-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#6fcf8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="cti-l">Email</div><div class="cti-v">eagletreeservice3@gmail.com</div></div>
+          </a>
+          <div class="cti rv" style="cursor:default;">
+            <div class="cti-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#6fcf8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="cti-l">Address</div><div class="cti-v">505 S South Smith Ave, Gentry, AR 72734</div></div>
+          </div>
+        </div>
+      </div>
+      <form class="cf ct-dark-form" onsubmit="submitForm(event)">
+        <div class="fr">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+        </div>
+        <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(479) 000-0000"></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="you@example.com" required></div>
+        <div class="fg">
+          <label>Service Needed</label>
+          <select>
+            <option value="">Select a service…</option>
+            <option>Tree Removal</option>
+            <option>Trimming &amp; Pruning</option>
+            <option>Stump Grinding</option>
+            <option>Lot &amp; Land Clearing</option>
+            <option>Debris Cleanup</option>
+            <option>Emergency Service</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Tell Us About Your Project</label><textarea placeholder="Describe your project — size, location, any concerns…"></textarea></div>
+        <button type="submit" class="cf-btn" id="cfBtn">
+          Send Message
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-main">
+    <div class="foot-grid">
+      <div>
+        <div class="fbn">Eagle Tree Service<small>LLC</small></div>
+        <p class="fbl">Proudly serving NW Arkansas homeowners and businesses with professional tree care. We show up, do the work, and leave your property better than we found it.</p>
+        <div class="fsoc">
+          <a href="#" class="fsl" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="fsl" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Tree Removal</a></li>
+          <li><a href="#services">Trimming &amp; Pruning</a></li>
+          <li><a href="#services">Stump Grinding</a></li>
+          <li><a href="#services">Lot Clearing</a></li>
+          <li><a href="#services">Emergency Service</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="prices.html">Pricing</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Free Estimate</a></li>
+          <li><a href="tel:+14798612859">(479) 861-2859</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <p>&copy; 2025 Eagle Tree Service LLC. All rights reserved.</p>
+    <p>Gentry, AR &mdash; Serving All of NW Arkansas</p>
+  </div>
+</footer>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:+14798612859" class="flt" id="flt">
+  <div class="fpulse"></div>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.27 9.44a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+  Call Now
+</a>
+
+<script>
+/* ── NAV ── */
+const navEl = document.getElementById('nav');
+const navSentinel = document.getElementById('navSentinel');
+if (navSentinel) {
+  new IntersectionObserver(entries => {
+    navEl.classList.toggle('s', !entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(navSentinel);
+}
+const fltEl = document.getElementById('flt');
+const fltSentinel = document.getElementById('fltSentinel');
+if (fltSentinel) {
+  new IntersectionObserver(entries => {
+    fltEl.classList.toggle('vis', !entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(fltSentinel);
+}
+
+/* ── MOBILE MENU ── */
+function toggleMenu() { document.getElementById('mmenu').classList.toggle('open'); }
+
+/* ── REVEAL ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); ro.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.rv').forEach((el, i) => {
+  el.style.transitionDelay = (i % 5) * 90 + 'ms';
+  ro.observe(el);
+});
+
+/* ── COUNTER ── */
+const cro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1800, fps = 60;
+    const step = target / (dur / (1000 / fps));
+    let cur = 0;
+    const tick = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = Math.floor(cur) + suffix;
+      if (cur >= target) clearInterval(tick);
+    }, 1000 / fps);
+    cro.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.s-num[data-target]').forEach(el => cro.observe(el));
+
+/* ── SERVICE FILTER ── */
+document.querySelectorAll('.ftab').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
+    this.classList.add('on');
+    const f = this.dataset.f;
+    document.querySelectorAll('.scard, .scard-outer').forEach(c => {
+      c.classList.toggle('dim', f !== 'all' && c.dataset.cat !== f);
+    });
+  });
+});
+
+/* ── TESTIMONIALS ── */
+const slides = document.querySelectorAll('.t-slide');
+const track = document.getElementById('tTrack');
+const dotsC = document.getElementById('tDots');
+let cur = 0;
+slides.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'tdot' + (i === 0 ? ' on' : '');
+  d.onclick = () => goTo(i);
+  dotsC.appendChild(d);
+});
+function goTo(n) {
+  cur = (n + slides.length) % slides.length;
+  track.style.transform = `translateX(-${cur * 100}%)`;
+  document.querySelectorAll('.tdot').forEach((d, i) => d.classList.toggle('on', i === cur));
+}
+document.getElementById('tPrev').onclick = () => goTo(cur - 1);
+document.getElementById('tNext').onclick = () => goTo(cur + 1);
+let timer = setInterval(() => goTo(cur + 1), 5200);
+document.querySelector('.t-wrap').addEventListener('mouseenter', () => clearInterval(timer));
+document.querySelector('.t-wrap').addEventListener('mouseleave', () => { timer = setInterval(() => goTo(cur + 1), 5200); });
+
+/* ── FAQ ── */
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq').forEach(f => f.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* ── ESTIMATE WIDGET ── */
+const rates = {
+  removal:  { small:[200,450],   medium:[450,950],  large:[950,2500] },
+  trimming: { small:[100,250],   medium:[250,500],  large:[500,1000] },
+  stump:    { small:[100,200],   medium:[150,325],  large:[200,450]  },
+  clearing: { small:[500,1200],  medium:[1200,3500],large:[3500,8000] }
+};
+const sizeHints = {
+  removal:  { small:'under 25 ft', medium:'25–60 ft', large:'60 ft+' },
+  trimming: { small:'1 small tree', medium:'1 medium tree', large:'1 large tree' },
+  stump:    { small:'small stump', medium:'medium stump', large:'large stump' },
+  clearing: { small:'under ¼ acre', medium:'¼–1 acre', large:'over 1 acre' }
+};
+const estSel = {};
+document.querySelectorAll('.echip').forEach(chip => {
+  chip.addEventListener('click', function () {
+    const step = this.dataset.step;
+    this.parentElement.querySelectorAll('.echip').forEach(c => c.classList.remove('sel'));
+    this.classList.add('sel');
+    estSel[step] = this.dataset.val;
+    if (step === '1') {
+      const hints = sizeHints[estSel['1']];
+      const chips = document.querySelectorAll('#estS2chips .echip');
+      chips[0].textContent = `Small (${hints.small})`;
+      chips[1].textContent = `Medium (${hints.medium})`;
+      chips[2].textContent = `Large (${hints.large})`;
+      chips.forEach(c => c.classList.remove('sel'));
+      document.getElementById('estS2').classList.add('show');
+      document.getElementById('estRes').classList.remove('show');
+    }
+    if (step === '2' && estSel['1']) {
+      const [lo, hi] = rates[estSel['1']][estSel['2']];
+      document.getElementById('erRange').textContent = `$${lo.toLocaleString()} – $${hi.toLocaleString()}`;
+      document.getElementById('estRes').classList.add('show');
+    }
+  });
+});
+
+/* ── PROCESS WIDGET ── */
+(function() {
+  const items = document.querySelectorAll('.proc-item');
+  const imgs = document.querySelectorAll('#procImgs img');
+  const dots = document.querySelectorAll('.proc-dot');
+  const pillText = document.getElementById('procPillText');
+  const rightTitle = document.getElementById('procRightTitle');
+  const STEP_TITLES = ['Call or Contact Us','Free On-Site Estimate','Professional Service','Spotless Cleanup'];
+  const STEP_DUR = 5000;
+  let procIdx = 0;
+  let procTimer;
+
+  function goProc(n, userClick) {
+    // deactivate current
+    items[procIdx].classList.remove('active');
+    imgs[procIdx].classList.remove('active');
+    dots[procIdx].classList.remove('active');
+    const oldFill = items[procIdx].querySelector('.proc-bar-fill');
+    oldFill.style.transition = 'none';
+    oldFill.style.width = '0';
+
+    procIdx = (n + items.length) % items.length;
+
+    // activate new
+    items[procIdx].classList.add('active');
+    imgs[procIdx].classList.add('active');
+    dots[procIdx].classList.add('active');
+    if (pillText) pillText.textContent = 'Step 0' + (procIdx + 1) + ' of 04';
+    if (rightTitle) rightTitle.textContent = STEP_TITLES[procIdx];
+
+    // start progress bar
+    const fill = items[procIdx].querySelector('.proc-bar-fill');
+    fill.style.transition = 'none';
+    fill.style.width = '0';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      fill.style.transition = 'width ' + STEP_DUR + 'ms linear';
+      fill.style.width = '100%';
+    }));
+
+    if (userClick) {
+      clearInterval(procTimer);
+      procTimer = setInterval(() => goProc(procIdx + 1, false), STEP_DUR);
+    }
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => goProc(i, true));
+  });
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => goProc(i, true));
+  });
+
+  // kick off
+  const initFill = items[0].querySelector('.proc-bar-fill');
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    initFill.style.transition = 'width ' + STEP_DUR + 'ms linear';
+    initFill.style.width = '100%';
+  }));
+  procTimer = setInterval(() => goProc(procIdx + 1, false), STEP_DUR);
+
+  // pause on hover
+  const widget = document.querySelector('.proc-widget');
+  if (widget) {
+    widget.addEventListener('mouseenter', () => clearInterval(procTimer));
+    widget.addEventListener('mouseleave', () => {
+      procTimer = setInterval(() => goProc(procIdx + 1, false), STEP_DUR);
+    });
+  }
+})();
+
+/* ── BEFORE/AFTER SLIDER ── */
+(function(){
+  const wrap = document.getElementById('bafWrap');
+  const after = document.getElementById('bafAfter');
+  const handle = document.getElementById('bafHandle');
+  if (!wrap) return;
+  let drag = false;
+  function setPos(clientX) {
+    const r = wrap.getBoundingClientRect();
+    const pct = Math.max(4, Math.min(96, (clientX - r.left) / r.width * 100));
+    after.style.width = pct + '%';
+    handle.style.left = pct + '%';
+  }
+  handle.addEventListener('mousedown', e => { drag = true; e.preventDefault(); });
+  document.addEventListener('mouseup', () => drag = false);
+  document.addEventListener('mousemove', e => { if (drag) setPos(e.clientX); });
+  handle.addEventListener('touchstart', e => { drag = true; e.preventDefault(); }, { passive: false });
+  document.addEventListener('touchend', () => drag = false);
+  document.addEventListener('touchmove', e => { if (drag) setPos(e.touches[0].clientX); }, { passive: true });
+  // init at 50%
+  wrap.addEventListener('mouseenter', () => {});
+  const initPct = 50;
+  after.style.width = initPct + '%';
+  handle.style.left = initPct + '%';
+})();
+
+/* ── TREE HEALTH CHECK ── */
+const hcState = [false, false, false];
+const hcData = [
+  { score: 0, cls: 'green', icon: '🌿', title: 'Looks Routine', desc: 'No urgent signs detected — schedule a regular trim or annual maintenance visit.', cta: 'Schedule Service' },
+  { score: 1, cls: 'yellow', icon: '⚠️', title: 'Needs Attention', desc: 'One concern noted — we recommend scheduling a professional inspection soon.', cta: 'Book Inspection' },
+  { score: 2, cls: 'red', icon: '🚨', title: 'Urgent — Call Now', desc: 'Multiple risk factors. This tree may need immediate professional attention.', cta: 'Call Now' },
+  { score: 3, cls: 'red', icon: '🚨', title: 'Emergency Risk', desc: 'Serious hazard indicators present. Please call us immediately for a same-day response.', cta: 'Call (479) 861-2859' }
+];
+function hcUpdate() {
+  const yes = hcState.filter(Boolean).length;
+  const d = hcData[Math.min(yes, 3)];
+  const res = document.getElementById('hcResult');
+  const reset = document.getElementById('hcReset');
+  res.className = 'hc-result ' + d.cls + (yes > 0 ? ' show' : '');
+  document.getElementById('hcTitle').textContent = d.title;
+  document.getElementById('hcDesc').textContent = d.desc;
+  const cta = document.getElementById('hcCta');
+  cta.textContent = d.cta + ' →';
+  cta.href = yes >= 2 ? 'tel:+14798612859' : '#contact';
+  if (reset) reset.style.display = yes > 0 ? 'block' : 'none';
+}
+function hcToggle(i) {
+  hcState[i] = !hcState[i];
+  const q = document.querySelector('[data-hq="' + i + '"]');
+  q.classList.toggle('yes', hcState[i]);
+  hcUpdate();
+}
+function hcReset() {
+  hcState.fill(false);
+  document.querySelectorAll('.hc-q').forEach(q => q.classList.remove('yes'));
+  const res = document.getElementById('hcResult');
+  res.classList.remove('show');
+  document.getElementById('hcReset').style.display = 'none';
+}
+
+/* ── DARK FAQ ── */
+function toggleFaqD(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faqd').forEach(f => f.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* ── CONTACT FORM ── */
+function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('cfBtn');
+  btn.innerHTML = '&#10003; Message Sent!';
+  btn.style.background = '#2d7a4f';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = 'Send Message <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+    btn.style.background = '';
+    btn.disabled = false;
+    e.target.reset();
+  }, 4000);
+}
+</script>
+</body>
+</html>
